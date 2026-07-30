@@ -203,4 +203,69 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // 13. FormSubmit AJAX Inquiry Form Handler
+  const inquiryForm = document.getElementById('inquiry-form');
+  const formStatusMsg = document.getElementById('form-status-msg');
+  const submitBtn = document.getElementById('submit-btn');
+
+  if (inquiryForm) {
+    inquiryForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const btnSpan = submitBtn ? submitBtn.querySelector('span') : null;
+      const originalText = btnSpan ? btnSpan.textContent : 'Submit Inquiry';
+      
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        if (btnSpan) btnSpan.textContent = 'Sending Inquiry...';
+      }
+
+      if (formStatusMsg) formStatusMsg.style.display = 'none';
+
+      try {
+        const formData = new FormData(inquiryForm);
+        const response = await fetch('https://formsubmit.co/ajax/bhawanitraders@ymail.com', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        const result = await response.json();
+
+        if (response.ok || result.success === "true") {
+          if (formStatusMsg) {
+            formStatusMsg.style.display = 'block';
+            formStatusMsg.innerHTML = `
+              <div style="background:rgba(34,197,94,0.12); border:1px solid rgba(34,197,94,0.3); color:#15803d; padding:14px 16px; border-radius:12px; font-weight:700; font-size:14px; text-align:center; line-height:1.5;">
+                ✅ Inquiry Sent Successfully!
+                <div style="font-size:12.5px; font-weight:500; margin-top:4px; opacity:0.9;">
+                  Thank you! Your details have been sent to <strong>bhawanitraders@ymail.com</strong>. Our Dinanagar sales desk will call you shortly.
+                </div>
+              </div>
+            `;
+          }
+          inquiryForm.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (err) {
+        if (formStatusMsg) {
+          formStatusMsg.style.display = 'block';
+          formStatusMsg.innerHTML = `
+            <div style="background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); color:#b91c1c; padding:12px 14px; border-radius:12px; font-weight:700; font-size:13px; text-align:center;">
+              ⚠️ Could not send inquiry. Please call us directly at +91 9417070994.
+            </div>
+          `;
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          if (btnSpan) btnSpan.textContent = originalText;
+        }
+      }
+    });
+  }
+
 });

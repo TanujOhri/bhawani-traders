@@ -750,7 +750,7 @@
               </div>
               <div>
                 <b>Email Query</b>
-                <span>contact@bhawanitraders.com</span>
+                <span>bhawanitraders@ymail.com</span>
               </div>
             </div>
 
@@ -772,36 +772,39 @@
           <div class="contact-card"
             style="background:var(--glass); color:var(--ink); border:1px solid var(--glass-border);" data-reveal>
             <h3 style="font-size: 22px; font-weight: 800;">Send Retail Partnership Query</h3>
-            <form id="inquiry-form" style="display:flex; flex-direction:column; gap:16px; margin-top:10px;">
+            <form id="inquiry-form" action="https://formsubmit.co/ajax/bhawanitraders@ymail.com" method="POST" style="display:flex; flex-direction:column; gap:16px; margin-top:10px;">
+              <input type="hidden" name="_subject" value="New Retail Inquiry — Bhawani Traders Website">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              
               <div class="form-group">
                 <label
-                  style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink-soft); display:block; margin-bottom:6px;">Your
-                  Name</label>
-                <input type="text" required placeholder="e.g. Rajesh Kumar"
+                  style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink-soft); display:block; margin-bottom:6px;">Your Name</label>
+                <input type="text" name="Full_Name" required placeholder="e.g. Rajesh Kumar"
                   style="width:100%; padding:12px 16px; border-radius:12px; border:1px solid rgba(10,31,68,0.15); background:rgba(255,255,255,0.8); font-family:inherit; color:var(--ink);">
               </div>
               <div class="form-group">
                 <label
-                  style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink-soft); display:block; margin-bottom:6px;">Store
-                  / Business Name</label>
-                <input type="text" required placeholder="e.g. Kumar Store, Dinanagar"
+                  style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink-soft); display:block; margin-bottom:6px;">Store / Business Name</label>
+                <input type="text" name="Store_Name" required placeholder="e.g. Kumar Store, Dinanagar"
                   style="width:100%; padding:12px 16px; border-radius:12px; border:1px solid rgba(10,31,68,0.15); background:rgba(255,255,255,0.8); font-family:inherit; color:var(--ink);">
               </div>
               <div class="form-group">
                 <label
-                  style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink-soft); display:block; margin-bottom:6px;">Mobile
-                  Number</label>
-                <input type="tel" required placeholder="+91 98765 00000"
+                  style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink-soft); display:block; margin-bottom:6px;">Mobile Number</label>
+                <input type="tel" name="Mobile_Number" required placeholder="+91 98765 00000"
                   style="width:100%; padding:12px 16px; border-radius:12px; border:1px solid rgba(10,31,68,0.15); background:rgba(255,255,255,0.8); font-family:inherit; color:var(--ink);">
               </div>
               <div class="form-group">
                 <label
-                  style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink-soft); display:block; margin-bottom:6px;">Message
-                  / Stock Requirement</label>
-                <textarea rows="3" placeholder="Tell us about your store or initial stock requirement..."
+                  style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink-soft); display:block; margin-bottom:6px;">Message / Stock Requirement</label>
+                <textarea name="Requirement_Message" rows="3" placeholder="Tell us about your store or initial stock requirement..."
                   style="width:100%; padding:12px 16px; border-radius:12px; border:1px solid rgba(10,31,68,0.15); background:rgba(255,255,255,0.8); font-family:inherit; color:var(--ink); resize:none;"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary"
+              
+              <div id="form-status-msg" style="display:none;"></div>
+
+              <button type="submit" id="submit-btn" class="btn btn-primary"
                 style="justify-content:center; padding:14px; margin-top:8px;"><span>Submit Inquiry</span></button>
             </form>
           </div>
@@ -838,7 +841,7 @@
           <h5>Dinanagar Sales Desk</h5>
           <p class="footer-info-line">📍 Railway Road, Dinanagar, Punjab 143531</p>
           <p class="footer-info-line">📞 +91 9417070994</p>
-          <p class="footer-info-line">✉️ contact@bhawanitraders.com</p>
+          <p class="footer-info-line">✉️ bhawanitraders@ymail.com</p>
           <p class="footer-info-line">⏰ Mon – Sat: 9:00 AM – 7:00 PM</p>
         </div>
 
@@ -874,7 +877,7 @@
 
   <!-- FLOATING ACTION BUTTONS -->
   <a id="whatsapp-float"
-    href="https://wa.me/919876543210?text=Hello%20Bhawani%20Traders,%20I%20want%20to%20inquire%20about%20HUL%20retail%20supply."
+    href="https://wa.me/919417070994?text=Hello%20Bhawani%20Traders,%20I%20want%20to%20inquire%20about%20HUL%20retail%20supply."
     target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
     <svg width="30" height="30" viewBox="0 0 24 24" fill="#ffffff">
       <path
