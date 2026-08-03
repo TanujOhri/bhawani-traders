@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       try {
         const formData = new FormData(inquiryForm);
-        const response = await fetch('https://formsubmit.co/ajax/bhawanitraders@ymail.com', {
+        const response = await fetch('https://formsubmit.co/ajax/05fd9d16829fcc09d3f5be0077e112e4', {
           method: 'POST',
           body: formData,
           headers: {
