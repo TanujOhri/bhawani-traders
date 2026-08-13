@@ -20,6 +20,12 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
 
+  <!-- Enforce Light Theme by default -->
+  <script>
+    document.documentElement.classList.remove('dark');
+    try { localStorage.removeItem('bhawani_theme'); } catch(e){}
+  </script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -46,7 +52,7 @@
       <div class="nav-inner">
         <a href="#top" class="brand">
           <span class="brand-dot"></span>
-          <span>Bhawani Traders<small>HUL CHANNEL PARTNER</small></span>
+          <span>Bhawani Traders</span>
         </a>
         <nav class="links">
           <a href="#about">About</a>

@@ -237,6 +237,7 @@ header.scrolled {
   gap: 10px;
   font-weight: 800;
   font-size: 17px;
+  white-space: nowrap;
 }
 
 .brand-dot {
